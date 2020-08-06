@@ -5,4 +5,14 @@ class UrlsController < ApplicationController
         @stub = "www.t.com"
         @short = "t.com"
     end
+    
+    def create
+      @url = Url.new(url_params)
+    if @url.save
+      flash[:success] = "Url Saved!"
+      redirect_to @url
+    else
+      render 'new'
+    end
+    end
 end
