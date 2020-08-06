@@ -1,0 +1,34 @@
+<h1 class='text-center'>Urls</h1>
+
+<div class="row">
+  <div class="col-md-4 offset-4">
+        <ul>
+            <li>www.test.com</li>
+            <li>t</li>
+            <li>www.t.com</li>
+        </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 offset-2">
+  <div class="row">
+  <div class="col-md-8 offset-2">
+    <%= form_with(model: @url, local: true) do |f| %>
+      <%# <%= render partial: 'shared/error_messages', object: f.object %> %>
+
+      <%= f.label :link %>
+      <%= f.text_field :link, class: 'mb-1 form-control' %>
+
+      <%= f.label :stub %>
+      <%= f.email_field :stub, class: 'mb-1 form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'mb-1 form-control' %>
+
+      <%= f.submit "Create Url", class: "mt-2 btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+  </div>
+</div>
