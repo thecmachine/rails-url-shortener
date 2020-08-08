@@ -2,7 +2,9 @@
 <% @urls.each do |url|%>
   <div class="row">
     <div class="col-md-10 offset-2">
-      <%= url.link %> || <%= url.short %>
+      <%= link_to url.link, "http://" + url.link, target: :_blank %>
+      <%= link_to url.short, "http://" + url.short, target: :_blank %>
+
       <%= button_to "delete url", {:controller => :urls,
                        :action => 'destroy', :id => url.id }, :method => :delete %>
     </div>
