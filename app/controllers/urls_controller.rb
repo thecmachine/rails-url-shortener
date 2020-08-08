@@ -8,11 +8,12 @@ class UrlsController < ApplicationController
         # @short = "t.com"
     end
 
-    def shorten
+    def index
+        render 'index'
     end
 
     def show
-        @Url = Url.find(params[:id])
+        @url = Url.find(params[:id])
         render 'new'
     end
 

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get   'urls',   to: 'urls#new'
+  get   'short',  to: 'urls#index'
   resources :users, :urls
 end
