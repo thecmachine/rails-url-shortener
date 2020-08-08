@@ -10,7 +10,8 @@ class UrlsController < ApplicationController
 
     def index
         @user = current_user
-        @Urls = @user.urls
+        # @Urls = Urls.find_by(:user => @user)
+        @urls = Url.where(:user_id => @user.id)
         render 'index'
     end
 
