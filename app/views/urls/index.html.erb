@@ -1,8 +1,8 @@
 <h1>Short Links</h1>
 <% @urls.each do |url|%>
   <div class="row">
-    <div class="col-md-4 offset-4">
-      www.<%= url.link %> || www.<%= url.short %>
+    <div class="col-md-10 offset-2">
+      <%= url.link %> || <%= url.short %>
       <%= button_to "delete url", {:controller => :urls,
                        :action => 'destroy', :id => url.id }, :method => :delete %>
     </div>
