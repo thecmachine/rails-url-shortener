@@ -4,7 +4,8 @@
     <div class="col-md-4 offset-4">
       www.<%= url.link %> || www.<%= url.short %>
       <%= button_to "delete url", {:controller => :urls,
-                               :action => 'destroy', :id => url.id }, :method => :delete %>
+                       :action => 'destroy', :id => url.id }, :method => :delete %>
     </div>
   </div>
+  </br>
 <% end %>

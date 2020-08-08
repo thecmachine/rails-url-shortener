@@ -32,7 +32,8 @@ class UrlsController < ApplicationController
         @url = Url.new(url_params)
         @url.user = current_user
         if @url.short == ""
-            @url.short = "localhost:3000/links/" + bijective_encode(@url.short)
+            # @url.short = "localhost:3000/links/" + rand.to_s[2..8]
+            @url.short = "localhost:3000/links/" + (0...8).map { (65 + rand(26)).chr }.join
         else
             @url.short = "localhost:3000/links/" + @url.short
         end
@@ -43,24 +44,6 @@ class UrlsController < ApplicationController
         else
             render 'index'
         end
-    end
-
-    ALPHABET =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split(//)
-    # make your own alphabet using:
-    # (('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a).shuffle.join
-
-    def bijective_encode(i)
-        # from http://refactormycode.com/codes/125-base-62-encoding
-        # with only minor modification
-        return ALPHABET[0] if i == 0
-        s = ''
-        base = ALPHABET.length
-        while i.length > 0
-            s << ALPHABET[i.modulo(base)]
-            i /= base
-        end
-        s.reverse
     end
 
     def url_params
