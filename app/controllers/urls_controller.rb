@@ -14,7 +14,7 @@ class UrlsController < ApplicationController
 
     def show
         @url = Url.find(params[:id])
-        render 'new'
+        render 'index'
     end
 
     def delete
@@ -27,7 +27,7 @@ class UrlsController < ApplicationController
             flash[:success] = "Url Saved!"
             redirect_to @url
         else
-            render 'new'
+            render 'index'
         end
     end
 
