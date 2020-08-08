@@ -10,7 +10,6 @@ class UrlsController < ApplicationController
 
     def index
         @user = current_user
-        # @Urls = Urls.find_by(:user => @user)
         @urls = Url.where(:user_id => @user.id)
         render 'index'
     end
@@ -20,9 +19,13 @@ class UrlsController < ApplicationController
         render 'index'
     end
 
-    def delete
+    def destroy
         @url = Url.find(params[:id])
         @url.delete();
+
+        @user = current_user
+        @urls = Url.where(:user_id => @user.id)
+        render 'index'
     end
     
     def create

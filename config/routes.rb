@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  delete 'delete_urls',  to:  'urls#delete'
+  delete 'delete_urls',  to:  'urls#destroy'
   get   'urls',   to: 'urls#new'
   get   'short',  to: 'urls#index'
 

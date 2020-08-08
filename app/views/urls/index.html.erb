@@ -3,7 +3,8 @@
   <div class="row">
     <div class="col-md-4 offset-4">
       www.<%= url.link %> || www.<%= url.short %>
-      <%= link_to "Delete URL", delete_urls_path, class: "mx-2", method: :delete %>
+      <%= button_to "delete url", {:controller => :urls,
+                               :action => 'destroy', :id => url.id }, :method => :delete %>
     </div>
   </div>
 <% end %>
