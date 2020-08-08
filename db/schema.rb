@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_182121) do
 
   create_table "urls", force: :cascade do |t|
     t.string "link"
-    t.string "slug"
+    t.string "stub"
     t.string "short"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
