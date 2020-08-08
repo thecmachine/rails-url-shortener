@@ -15,6 +15,7 @@ class UrlsController < ApplicationController
     end
 
     def show
+        @user = current_user
         @url = Url.find(params[:id])
         render 'index'
     end

@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get   'urls',   to: 'urls#new'
   get   'short',  to: 'urls#index'
 
+  get   'links/:id', to: 'links#index', as: 'shortlink'
+
   resources :users, :urls
 end
