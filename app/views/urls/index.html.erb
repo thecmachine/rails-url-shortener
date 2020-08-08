@@ -1,1 +1,7 @@
 <h1>Short Links</h1>
+<% @Urls.each do |url|%>
+  <tr>
+    <th><%= url.link %></th>
+    <th><%= url.short %></th>
+  </tr>
+<% end %>

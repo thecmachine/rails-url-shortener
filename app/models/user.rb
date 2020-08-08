@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :items
+  has_many :urls
   has_secure_password
   before_save { self.email = email.downcase }
   validates :name, presence: true

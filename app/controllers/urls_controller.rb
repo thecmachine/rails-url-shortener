@@ -9,6 +9,8 @@ class UrlsController < ApplicationController
     end
 
     def index
+        @user = current_user
+        @Urls = @user.urls
         render 'index'
     end
 
