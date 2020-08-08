@@ -6,6 +6,8 @@ class CreateUrls < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
+
+      # add_index :short, unique: true
     end
   end
 end
