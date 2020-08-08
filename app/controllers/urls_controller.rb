@@ -21,6 +21,8 @@ class UrlsController < ApplicationController
     end
 
     def delete
+        @url = Url.find(params[:id])
+        @url.delete();
     end
     
     def create
