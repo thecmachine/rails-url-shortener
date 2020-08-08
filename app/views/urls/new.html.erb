@@ -3,9 +3,7 @@
 <div class="row">
   <div class="col-md-4 offset-4">
         <ul>
-            <li>www.test.com</li>
-            <li>t</li>
-            <li>www.t.com</li>
+            <li> www.test.com | t | localhost:3000/t </li>
         </ul>
   </div>
 </div>
@@ -15,13 +13,9 @@
   <div class="row">
   <div class="col-md-8 offset-2">
     <%= form_with(model: @url, local: true) do |f| %>
-      <%# <%= render partial: 'shared/error_messages', object: f.object %> %>
 
       <%= f.label :link %>
       <%= f.text_field :link, class: 'mb-1 form-control' %>
-
-      <%= f.label :stub %>
-      <%= f.text_field :stub, class: 'mb-1 form-control' %>
 
       <%= f.label :short %>    
       <%= f.text_field :short, class: 'mb-1 form-control' %>
