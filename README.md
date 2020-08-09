@@ -16,7 +16,7 @@
   ```rails test```
 
 
-## Web app instructions
+## Web App Instructions
 
 1. Navigate to app http://localhost:3000
 2. Click 'Sign Up' http://localhost:3000/signup
@@ -28,5 +28,3 @@
 ## License
 
 This project is [MIT](http://www.tldrlegal.com/license/mit-license) licensed.
-
-Follow me if you like this project.
