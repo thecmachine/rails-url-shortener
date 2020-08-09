@@ -15,7 +15,6 @@
 5. Run Full Rails Test Suite
   ```rails test```
 
-
 ## Web App Instructions
 
 1. Navigate to app http://localhost:3000
@@ -24,6 +23,12 @@
 4. Login http://localhost:3000/login
 5. Create and Shorten Urls at 'New Url' http://localhost:3000/urls
 6. View, Delete and Follow Short links at 'Short Urls' http://localhost:3000/short
+
+## Comments
+I picked up a basic user login scaffold to get started and just used vanilla Rails
+  utilities to build this Url Shortener Demo
+
+Good luck! Have fun!
 
 ## License
 
