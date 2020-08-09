@@ -1,35 +1,31 @@
-# Rails session based authentication
-> This is a simple session based authentication system that is built on rails that can serve as a starting point to build more complex apps.
+## Install Guide
 
-## Built With
+1. Clone Clint's Url Shortener Repository
+  ```git clone https://github.com/thecmachine/rails-url-shortener.git```
 
-- ruby
-- rails
-- HTML
-- CSS 
+2. Run Bundler to install Dependencies
+  ```bundle install```
 
+3. Run Database Migrations
+  ```rails db:migrate```
 
-## Getting Started
+4. Start Rails Server
+  ```rails s``` OR ```rails server``` (For Veterans of Rails ;P )
 
-To get a local copy up and running follow these simple example steps.
-
- - Clone this repository to your local machine using ```git clone https://github.com/DanielMitiku/rails_session.git```.
-
- - Run ```bundle install``` to install dependencies.
-
- - Run ```rails db:migrate``` to migrate the database.
-
- - Start the server ```rails s```
+5. Run Full Rails Test Suite
+  ```rails test```
 
 
-## Author
+## Web app instructions
 
-👤 **Daniel Mitiku**
+1. Navigate to app http://localhost:3000
+2. Click 'Sign Up' http://localhost:3000/signup
+3. Create a new user
+4. Login http://localhost:3000/login
+5. Create and Shorten Urls at 'New Url' http://localhost:3000/urls
+6. View, Delete and Follow Short links at 'Short Urls' http://localhost:3000/short
 
-- Github: [@danielmitiku](https://github.com/DanielMitiku)
-
-
-## 📝 License
+## License
 
 This project is [MIT](http://www.tldrlegal.com/license/mit-license) licensed.
 
