@@ -17,6 +17,7 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
     urllink = Url.find_by_sql("Select link from urls where short = '" + url.short + "'")
     urllink = urllink[0].link
     link = "http://" + urllink
+    # assert_redirected_to bug present in rails 6
     assert_equal("http://www.google.com", link)
   end
   test "should redirect user to link are not equal" do
@@ -35,6 +36,7 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
     urllink = Url.find_by_sql("Select link from urls where short = '" + url.short + "'")
     urllink = urllink[0].link
     link = "http://" + urllink
+    # assert_redirected_to bug present in rails 6
     assert_not_equal("http://www.google.com", link)
   end
 end
