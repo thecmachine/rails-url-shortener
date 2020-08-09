@@ -20,4 +20,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     user.name = 'name'
     assert_not user.save, "Saved the user without an email"
   end
+  test "should save a user" do
+    user = User.new
+    user.name = 'name'
+    user.email = 'name@test.com'
+    user.password = 'password'
+    assert user.save, "Saved the user! NOT"
+  end
 end
