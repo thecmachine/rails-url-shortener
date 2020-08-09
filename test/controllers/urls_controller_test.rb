@@ -49,4 +49,18 @@ class UrlsControllerTest < ActionDispatch::IntegrationTest
     url.short = (0...8).map { (65 + rand(26)).chr }.join
     assert url.save, "Saved the url with a user"
   end
+
+  test "should save a url with a new user and delete" do
+    user = User.new
+    user.name = 'name'
+    user.email = 'name@test.com'
+    user.password = 'password'
+
+    url = Url.new
+    url.user = user
+    url.link = "www.google.com"
+    url.short = (0...8).map { (65 + rand(26)).chr }.join
+    url.save
+    assert url.delete, "deleted the url with a user"
+  end
 end
