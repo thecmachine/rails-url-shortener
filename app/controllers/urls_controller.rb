@@ -16,7 +16,7 @@ class UrlsController < ApplicationController
 
     def show
         @user = current_user
-        @url = Url.find(params[:id])
+        @urls = Url.find(params[:id])
         render 'index'
     end
 
@@ -43,6 +43,8 @@ class UrlsController < ApplicationController
             flash[:success] = "Url Saved!"
             redirect_to @url
         else
+            @user = current_user
+            @urls = Url.find(params[:id])
             render 'index'
         end
     end
