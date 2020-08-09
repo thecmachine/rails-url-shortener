@@ -15,8 +15,7 @@ class UrlsController < ApplicationController
     end
 
     def show
-        @user = current_user
-        @urls = Url.find(params[:id])
+        @url = Url.find(params[:id])
         render 'index'
     end
 
@@ -33,7 +32,6 @@ class UrlsController < ApplicationController
         @url = Url.new(url_params)
         @url.user = current_user
         if @url.short == ""
-            # @url.short = "localhost:3000/links/" + rand.to_s[2..8]
             @url.short = "localhost:3000/links/" + (0...8).map { (65 + rand(26)).chr }.join
         else
             @url.short = "localhost:3000/links/" + @url.short
@@ -41,11 +39,9 @@ class UrlsController < ApplicationController
 
         if @url.save!
             flash[:success] = "Url Saved!"
-            redirect_to @url
+            redirect_to action: 'index'
         else
-            @user = current_user
-            @urls = Url.find(params[:id])
-            render 'index'
+            redirect_to action: 'index'
         end
     end
 
