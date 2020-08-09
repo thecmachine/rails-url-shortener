@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class UrlsControllerTest < ActionDispatch::IntegrationTest
-  test "the truth" do
-    assert true
-  end
-
   test "should not save a url without a link" do
     url = Url.new
     url.short = "localhost:3000//asdfasd"
